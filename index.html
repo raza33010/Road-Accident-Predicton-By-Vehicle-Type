@@ -1,0 +1,134 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Navigation</title>
+     <style>
+         * {
+             text-decoration: none;
+         }
+
+         .navbar {
+             background-color: lightblue;
+             border-radius: 15px;
+             font-family: calibri;
+             padding: 0 15px;
+         }
+
+         .navdiv {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+         }
+
+         .logo a {
+             font-size: 35px;
+             font-weight: 600;
+             color: darkgreen;
+         }
+
+         ul {
+             overflow: auto;
+         }
+
+         li {
+             list-style: none;
+             display: inline-block;
+             margin: 13px 20px;
+         }
+
+         li a {
+             color: darkgreen;
+             font-size: 18px;
+             font-weight: bold;
+             padding: 3px 3px;
+         }
+
+         li a:hover {
+             color: beige;
+         }
+
+         button {
+             background-color: black;
+             margin-left: 10px;
+             border-radius: 10px;
+             padding: 10px;
+             width: 90px;
+         }
+
+         button a {
+             color: white;
+             font-weight: bold;
+             font-size: 15px;
+         }
+
+         .search {
+             float: right;
+             color: white;
+             padding: 12px 75px;
+         }
+
+         .navbar input {
+             border: 2px solid deeppink;
+             border-radius: 14px;
+             padding: 3px 17px;
+             width: 100px;
+         }
+
+         #aboutContent {
+             display: none;
+             padding: 10px;
+             background-color: lightyellow;
+             border: 1px solid lightgray;
+             margin-top: 10px;
+         }
+
+         #imageContainer {
+             text-align: center;
+             margin-top: 20px;
+         }
+     </style>
+     <script>
+         function toggleAbout() {
+             var aboutContent = document.getElementById("aboutContent");
+             var imageContainer = document.getElementById("imageContainer");
+             if (aboutContent.style.display === "none") {
+                 aboutContent.style.display = "block";
+                 imageContainer.style.display = "none";
+             } else {
+                 aboutContent.style.display = "none";
+                 imageContainer.style.display = "block";
+             }
+         }
+     </script>
+ </head>
+
+ <body>
+     <header>
+         <nav class="navbar">
+             <div class="navdiv">
+                 <div class="logo"><a href="#">Accident Analysis</a></div>
+                 <ul>
+                     <li><a href="#">Home</a></li>
+                     <li><a href="javascript:void(0);" onclick="toggleAbout()">About</a></li>
+                     <li><a href="#">Performance</a></li>
+                     <li><a href="#">Bar chart</a></li>
+                 </ul>
+             </div>
+         </nav>
+         <div id="aboutContent">
+             <p>Our innovative machine learning model predicts vehicle accident rates by accurately identifying individual vehicles and analyzing a comprehensive set of data, including historical accident records vehicle specifications, and real-time traffic information. By recognizing patterns and correlations within these datasets, our model provides precise and actionable insights to enhance road safety and mitigate risks. This advanced technology supports insurance companies, fleet managers, and individual drivers by delivering data-driven predictions and personalized recommendations, ultimately helping to prevent accidents and promote safer driving practices..</p>
+         </div>
+     </header>
+
+     <!-- Add your image here -->
+     <div id="imageContainer">
+         <img src="car.jpg" alt="Description of Image" style="width: 1000px; height: auto; border-radius: 100px;">
+     </div>
+ </body>
+
+ </html>
