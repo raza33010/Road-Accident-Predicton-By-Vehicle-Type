@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .chart-container, .image-container {
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .image-container img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-height: 350px; 
+        }
+        canvas {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Visualization</h1>
+
+
+        <div class="chart-container">
+            <h2>Road Surface Conditions</h2>
+            <canvas id="roadSurfaceChart"></canvas>
+            <div class="image-container">
+                <img src="road surface con.jpg" alt="Road Surface Conditions">
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Percentage of Accidents by Day of the Week</h2>
+            <canvas id="accidentsByDayChart"></canvas>
+            <div class="image-container">
+                <img src="prcnt acc by Day of the Week.jpg" alt="Percentage of Accidents by Day of the Week">
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Number of Accidents per Each Hour in the Day (Sorted)</h2>
+            <canvas id="accidentsByHourChart"></canvas>
+            <div class="image-container">
+                <img src="Number of Accidents per Each Hour in the Day.jpg" alt="Number of Accidents per Each Hour in the Day">
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Accident by Vehicle Type</h2>
+            <canvas id="accidentsByVehicleTypeChart"></canvas>
+            <div class="image-container">
+                <img src="Accident by VT and LC.jpg" alt="Accident by Vehicle Type">
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Accident Count By Injuries</h2>
+            <canvas id="accidentsByLightConditionChart"></canvas>
+            <div class="image-container">
+                <img src="acc count by injuris.jpg" alt="Accident Count By Injuries">
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>Percentage of Accidents by Date</h2>
+            <canvas id="accidentsByDateChart"></canvas>
+            <div class="image-container">
+                <img src="percntg by acc.jpg" alt="Percentage of Accidents by Date">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
