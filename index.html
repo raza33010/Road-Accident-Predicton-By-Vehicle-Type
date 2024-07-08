@@ -1,4 +1,3 @@
-
  <!DOCTYPE html>
  <html lang="en">
 
@@ -10,13 +9,16 @@
      <style>
          * {
              text-decoration: none;
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
          }
 
          .navbar {
              background-color: lightblue;
              border-radius: 15px;
              font-family: calibri;
-             padding: 0 15px;
+             padding: 10px 15px;
          }
 
          .navdiv {
@@ -32,13 +34,13 @@
          }
 
          ul {
-             overflow: auto;
+             display: flex;
+             list-style: none;
          }
 
          li {
-             list-style: none;
-             display: inline-block;
-             margin: 13px 20px;
+             position: relative;
+             margin: 0 20px;
          }
 
          li a {
@@ -46,10 +48,32 @@
              font-size: 18px;
              font-weight: bold;
              padding: 3px 3px;
+             display: block;
          }
 
          li a:hover {
              color: beige;
+         }
+
+         .dropdown-content {
+             display: none;
+             position: absolute;
+             background-color: lightblue;
+             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+             z-index: 1;
+             min-width: 160px;
+         }
+
+         .dropdown-content a {
+             padding: 12px 16px;
+         }
+
+         .dropdown-content a:hover {
+             background-color: darkblue;
+         }
+
+         li:hover .dropdown-content {
+             display: block;
          }
 
          button {
@@ -96,13 +120,15 @@
          function toggleAbout() {
              var aboutContent = document.getElementById("aboutContent");
              var imageContainer = document.getElementById("imageContainer");
-             if (aboutContent.style.display === "none") {
-                 aboutContent.style.display = "block";
-                 imageContainer.style.display = "none";
-             } else {
-                 aboutContent.style.display = "none";
-                 imageContainer.style.display = "block";
-             }
+             aboutContent.style.display = "block";
+             imageContainer.style.display = "none";
+         }
+
+         function showHome() {
+             var aboutContent = document.getElementById("aboutContent");
+             var imageContainer = document.getElementById("imageContainer");
+             aboutContent.style.display = "none";
+             imageContainer.style.display = "block";
          }
      </script>
  </head>
@@ -113,19 +139,26 @@
              <div class="navdiv">
                  <div class="logo"><a href="#">Accident Analysis</a></div>
                  <ul>
-                     <li><a href="#">Home</a></li>
+                     <li><a href="javascript:void(0);" onclick="showHome()">Home</a></li>
                      <li><a href="javascript:void(0);" onclick="toggleAbout()">About</a></li>
-                     <li><a href="#">Performance</a></li>
-                     <li><a href="#">Bar chart</a></li>
+                     <li>
+                         <a href="#">Performance</a>
+                         <div class="dropdown-content">
+                             <a href="#">Linear Regression</a>
+                             <a href="#">Logistic Regression</a>
+                             <a href="#">Decision Tree</a>
+                         </div>
+                     </li>
+                     <li><a href="#">Data Visualization</a></li>
                  </ul>
              </div>
          </nav>
          <div id="aboutContent">
-             <p>Our innovative machine learning model predicts vehicle accident rates by accurately identifying individual vehicles and analyzing a comprehensive set of data, including historical accident records vehicle specifications, and real-time traffic information. By recognizing patterns and correlations within these datasets, our model provides precise and actionable insights to enhance road safety and mitigate risks. This advanced technology supports insurance companies, fleet managers, and individual drivers by delivering data-driven predictions and personalized recommendations, ultimately helping to prevent accidents and promote safer driving practices..</p>
+             <p>Our innovative machine learning model predicts vehicle accident rates by accurately identifying individual vehicles and analyzing a comprehensive set of data, including historical accident records vehicle specifications, and real-time traffic information. By recognizing patterns and correlations within these datasets, our model provides precise and actionable insights to enhance road safety and mitigate risks. This advanced technology supports insurance companies, fleet managers, and individual drivers by delivering data-driven predictions and personalized recommendations, ultimately helping to prevent accidents and promote safer driving practices.</p>
          </div>
      </header>
 
-     <!-- Add your image here -->
+    
      <div id="imageContainer">
          <img src="car.jpg" alt="Description of Image" style="width: 1000px; height: auto; border-radius: 100px;">
      </div>
