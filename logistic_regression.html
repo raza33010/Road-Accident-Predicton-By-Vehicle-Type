@@ -3,14 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <input name="section" list="scripts" />
-
-
-    <datalist id="scripts">
-        <option value="van" />
-        <option value="car" />
-        <option value="other" />
-
-
-    </datalist>
+    <title>Logistic Regression Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 20px 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .heading {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            margin-right: 10px;
+            font-weight: 500;
+            color: #495057;
+        }
+        select {
+            width: 45%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            width: 48%;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #withPackageButton {
+            background-color: #28a745;
+        }
+        #withPackageButton:hover {
+            background-color: #218838;
+        }
+        #withoutPackageButton {
+            background-color: #dc3545;
+        }
+        #withoutPackageButton:hover {
+            background-color: #c82333;
+        }
+        .predict-button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .predict-button {
+            width: 50%;
+            background-color: #007bff;
+        }
+        .predict-button:hover {
+            background-color: #0069d9;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">LOGISTIC REGRESSION</div>
+        <div class="form-group">
+            <label for="dropdown1">Dropdown 1:</label>
+            <select id="dropdown1">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+            <label for="dropdown2">Dropdown 2:</label>
+            <select id="dropdown2">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dropdown3">Dropdown 3:</label>
+            <select id="dropdown3">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+            <label for="dropdown4">Dropdown 4:</label>
+            <select id="dropdown4">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dropdown5">Dropdown 5:</label>
+            <select id="dropdown5">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+            <label for="dropdown6">Dropdown 6:</label>
+            <select id="dropdown6">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button id="withPackageButton">With Package</button>
+            <button id="withoutPackageButton">Without Package</button>
+        </div>
+        <div class="predict-button-container">
+            <button id="predictButton" class="predict-button">Predict</button>
+        </div>
+        <div id="output"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
