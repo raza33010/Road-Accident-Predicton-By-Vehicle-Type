@@ -138,15 +138,60 @@
                 <option value="option3">Option 3</option>
             </select>
         </div>
-        <div class="buttons">
+        <!-- <div class="buttons">
             <button id="withPackageButton">With Package</button>
             <button id="withoutPackageButton">Without Package</button>
-        </div>
+        </div> -->
         <div class="predict-button-container">
             <button id="predictButton" class="predict-button">Predict</button>
         </div>
         <div id="output"></div>
     </div>
-    <script src="script.js"></script>
+    <script > 
+        const predictButton = document.getElementById('predictButton');
+        const outputDiv = document.getElementById('output');
+        console.log('abbas');
+        predictButton.addEventListener('click', async () => {
+            // Your event listener code
+        
+          const dropdown1Value = document.getElementById('dropdown1').value;
+          const dropdown2Value = document.getElementById('dropdown2').value;
+          // Repeat for all dropdowns (dropdown3 to dropdown6)
+    
+          // Prepare data object
+          const data = {
+            Day_of_Week: 4,
+            Junction_Detail: 8,
+            Accident_Injuries: 1,
+            Light_Conditions: 4,
+            death_toll:  1,
+            Number_of_Vehicles:  2,
+            Road_Surface_Conditions: 0,
+            Road_Type: 1,
+            Speed_limit: 30,
+            Hour_of_Accident: 15.0,
+            Urban_or_Rural_Area: 1,
+            Weather_Conditions: 2,
+            // Add properties for other dropdowns
+          };
+    console.log(data);
+          // Send POST request with data
+          const response = await fetch('http://127.0.0.1:5000/predict', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+    
+          // Handle response
+          if (response.ok) {
+            const predictionData = await response.json();
+            outputDiv.textContent = `Prediction: ${predictionData.prediction}`;
+          } else {
+            outputDiv.textContent = 'Error: Prediction failed.';
+          }
+         
+        });</script>
 </body>
 </html>
