@@ -1,6 +1,5 @@
  <!DOCTYPE html>
  <html lang="en">
-
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,36 +12,30 @@
              padding: 0;
              box-sizing: border-box;
          }
-
          .navbar {
              background-color: lightblue;
              border-radius: 15px;
              font-family: calibri;
              padding: 10px 15px;
          }
-
          .navdiv {
              display: flex;
              align-items: center;
              justify-content: space-between;
          }
-
          .logo a {
              font-size: 35px;
              font-weight: 600;
              color: darkgreen;
          }
-
          ul {
              display: flex;
              list-style: none;
          }
-
          li {
              position: relative;
              margin: 0 20px;
          }
-
          li a {
              color: darkgreen;
              font-size: 18px;
@@ -50,11 +43,9 @@
              padding: 3px 3px;
              display: block;
          }
-
          li a:hover {
              color: beige;
          }
-
          .dropdown-content {
              display: none;
              position: absolute;
@@ -63,19 +54,15 @@
              z-index: 1;
              min-width: 160px;
          }
-
          .dropdown-content a {
              padding: 12px 16px;
          }
-
          .dropdown-content a:hover {
              background-color: darkblue;
          }
-
          li:hover .dropdown-content {
              display: block;
          }
-
          button {
              background-color: black;
              margin-left: 10px;
@@ -83,26 +70,22 @@
              padding: 10px;
              width: 90px;
          }
-
          button a {
              color: white;
              font-weight: bold;
              font-size: 15px;
          }
-
          .search {
              float: right;
              color: white;
              padding: 12px 75px;
          }
-
          .navbar input {
              border: 2px solid deeppink;
              border-radius: 14px;
              padding: 3px 17px;
              width: 100px;
          }
-
          #aboutContent {
              display: none;
              padding: 10px;
@@ -110,7 +93,6 @@
              border: 1px solid lightgray;
              margin-top: 10px;
          }
-
          #imageContainer {
              text-align: center;
              margin-top: 20px;
@@ -132,7 +114,6 @@
          }
      </script>
  </head>
-
  <body>
      <header>
          <nav class="navbar">
@@ -144,9 +125,9 @@
                      <li>
                          <a href="#">Performance</a>
                          <div class="dropdown-content">
-                             <a href="#">Linear Regression</a>
-                             <a href="#">Logistic Regression</a>
-                             <a href="#">Decision Tree</a>
+                             <a href="linear_regression.html">Linear Regression</a>
+                             <a href="logistic_regression.html">Logistic Regression</a>
+                             <a href="decision_tree.html">Decision Tree</a>
                          </div>
                      </li>
                      <li><a href="#">Data Visualization</a></li>
@@ -157,11 +138,8 @@
              <p>Our innovative machine learning model predicts vehicle accident rates by accurately identifying individual vehicles and analyzing a comprehensive set of data, including historical accident records vehicle specifications, and real-time traffic information. By recognizing patterns and correlations within these datasets, our model provides precise and actionable insights to enhance road safety and mitigate risks. This advanced technology supports insurance companies, fleet managers, and individual drivers by delivering data-driven predictions and personalized recommendations, ultimately helping to prevent accidents and promote safer driving practices.</p>
          </div>
      </header>
-
-    
      <div id="imageContainer">
          <img src="car.jpg" alt="Description of Image" style="width: 1000px; height: auto; border-radius: 100px;">
      </div>
  </body>
-
  </html>
