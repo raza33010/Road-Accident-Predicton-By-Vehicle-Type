@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistic Regression Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 20px 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .heading {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            margin-right: 10px;
+            font-weight: 500;
+            color: #495057;
+        }
+        select {
+            width: 45%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            width: 48%;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #withPackageButton {
+            background-color: #28a745;
+        }
+        #withPackageButton:hover {
+            background-color: #218838;
+        }
+        #withoutPackageButton {
+            background-color: #dc3545;
+        }
+        #withoutPackageButton:hover {
+            background-color: #c82333;
+        }
+        .predict-button-container {
+            display: flex;
+            justify-content: center;
+        }
+        .predict-button {
+            width: 50%;
+            background-color: #007bff;
+        }
+        .predict-button:hover {
+            background-color: #0069d9;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">LOGISTIC REGRESSION</div>
+        <div class="form-group">
+            <label for="dropdown1">Day of Week:</label>
+            <select id="dropdown1">
+                <option value="1">Mon</option>
+                <option value="2">Tues</option>
+                <option value="3">Wed</option>
+                <option value="4">Thur</option>
+                <option value="5">Fri</option>
+                <option value="6">Sat</option>
+                <option value="7">Sun</option>
+            </select>
+            <label for="dropdown2">Junction Detail:</label>
+            <select id="dropdown2">
+                <option value="1">T or staggered junction</option>
+                <option value="2">Crossroads</option>
+                <option value="3">Not at junction or within 20 metres</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dropdown3">Accident Injuries:</label>
+            <select id="dropdown3">
+                <option value="1">Serious</option>
+                <option value="2">Fatal</option>
+                <option value="3">Slight</option>
+            </select>
+            <label for="dropdown4">Light_Conditions:</label>
+            <select id="dropdown4">
+                <option value="1">Daylight</option>
+                <option value="2">Darkness</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dropdown5">death toll:</label>
+            <select id="dropdown5">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <label for="dropdown6">Number of Vehicles:</label>
+            <select id="dropdown6">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dropdown7">Road Surface Conditions:</label>
+            <select id="dropdown7">
+                <option value="1">Dry</option>
+                <option value="2">Wet</option>
+                <option value="3">Frost</option>
+            </select>
+            <label for="dropdown8">Road Type:</label>
+            <select id="dropdown8">
+                <option value="1">One way street</option>
+                <option value="2">Single carriageway</option>
+                <option value="3">Dual carriageway</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dropdown9">Speed limit:</label>
+            <select id="dropdown9">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+            </select>
+            <label for="dropdown10">Time of Accident:</label>
+            <select id="dropdown10">
+                <option value="16">4pm</option>
+                <option value="17">5pm</option>
+                <option value="18">6pm</option>
+            </select>
+        </div><div class="form-group">
+            <label for="dropdown11">Area:</label>
+            <select id="dropdown11">
+                <option value="1">Urban</option>
+                <option value="2">Rural</option>
+            </select>
+            <label for="dropdown12">Weather Conditions:</label>
+            <select id="dropdown12">
+                <option value="1">Fine</option>
+                <option value="2">High wind</option>
+                <option value="3">Raining</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button id="withPackageButton">With Package</button>
+            <!-- <button id="withoutPackageButton">Without Package</button> -->
+        </div>
+        <!-- <div class="predict-button-container">
+            <button id="predictButton" class="predict-button">Predict</button>
+        </div> -->
+        <div id="output"></div>
+    </div>
+    <script > 
+    // with python pakage
+        const withPackageButton = document.getElementById('withPackageButton');
+        const outputDiv = document.getElementById('output');
+        console.log('abbas');
+        withPackageButton.addEventListener('click', async () => {
+            // Your event listener code
+        
+          const dropdown1Value = document.getElementById('dropdown1').value;
+          const dropdown2Value = document.getElementById('dropdown2').value;
+          const dropdown3Value = document.getElementById('dropdown3').value;
+          const dropdown4Value = document.getElementById('dropdown4').value;
+          const dropdown5Value = document.getElementById('dropdown5').value;
+          const dropdown6Value = document.getElementById('dropdown6').value;
+          const dropdown7Value = document.getElementById('dropdown7').value;
+          const dropdown8Value = document.getElementById('dropdown8').value;
+          const dropdown9Value = document.getElementById('dropdown9').value;
+          const dropdown10Value = document.getElementById('dropdown10').value;
+          const dropdown11Value = document.getElementById('dropdown11').value;
+          const dropdown12Value = document.getElementById('dropdown12').value;
+          // Repeat for all dropdowns (dropdown3 to dropdown6)
+    
+         
+          const data = {
+            Day_of_Week: Number(dropdown1Value),
+            Junction_Detail: Number(dropdown2Value),
+            Accident_Injuries: Number(dropdown3Value),
+            Light_Conditions: Number(dropdown4Value),
+            death_toll:  Number(dropdown5Value),
+            Number_of_Vehicles:  Number(dropdown6Value),
+            Road_Surface_Conditions: Number(dropdown7Value),
+            Road_Type: Number(dropdown8Value),
+            Speed_limit: Number(dropdown9Value),
+            Hour_of_Accident: Number(dropdown10Value),
+            Urban_or_Rural_Area: Number(dropdown11Value),
+            Weather_Conditions: Number(dropdown12Value),
+            // Add properties for other dropdowns
+          };
+
+          // Send POST request with data
+          const response = await fetch('http://127.0.0.1:5000/LR_py/predict', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+    
+          // Handle response
+          if (response.ok) {
+            const predictionData = await response.json();
+            outputDiv.textContent = `Prediction: ${predictionData.prediction}`;
+          } else {
+            outputDiv.textContent = 'Error: Prediction failed.';
+          }
+         
+        });
+    
+        // without python pakage
+        const withoutPackageButton = document.getElementById('withoutPackageButton');
+        const outputDivi = document.getElementById('output');
+        console.log('abbas');
+        withoutPackageButton.addEventListener('click', async () => {
+            // Your event listener code
+        
+          const dropdown1Value = document.getElementById('dropdown1').value;
+          const dropdown2Value = document.getElementById('dropdown2').value;
+          const dropdown3Value = document.getElementById('dropdown3').value;
+          const dropdown4Value = document.getElementById('dropdown4').value;
+          const dropdown5Value = document.getElementById('dropdown5').value;
+          const dropdown6Value = document.getElementById('dropdown6').value;
+          const dropdown7Value = document.getElementById('dropdown7').value;
+          const dropdown8Value = document.getElementById('dropdown8').value;
+          const dropdown9Value = document.getElementById('dropdown9').value;
+          const dropdown10Value = document.getElementById('dropdown10').value;
+          const dropdown11Value = document.getElementById('dropdown11').value;
+          const dropdown12Value = document.getElementById('dropdown12').value;
+          // Repeat for all dropdowns (dropdown3 to dropdown6)
+    
+          // Prepare data object
+          // Prepare data object
+          const data = {
+            Day_of_Week: 4,
+            Junction_Detail: 8,
+            Accident_Injuries: 1,
+            Light_Conditions: 4,
+            death_toll: 1,
+            Number_of_Vehicles: 2,
+            Road_Surface_Conditions: 0,
+            Road_Type: 1,
+            Speed_limit: 30,
+            Hour_of_Accident: 15.0,
+            Urban_or_Rural_Area: 1,
+            Weather_Conditions: 2,
+            // Add properties for other dropdowns
+          };
+
+        
+
+          // Send POST request with data
+          const response = await fetch('http://127.0.0.1:5000/DT/predict', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+    
+          // Handle response
+          if (response.ok) {
+            const predictionData = await response.json();
+            outputDivi.textContent = `Prediction: ${predictionData.prediction}`;
+          } else {
+            outputDivi.textContent = 'Error: Prediction failed.';
+          }
+         
+        });
+
+    </script>
+</body>
+</html>
